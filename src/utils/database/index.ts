@@ -7,7 +7,7 @@ const connectDB = async () => {
   };
   try {
     await moongose.connect(
-      "mongodb+srv://namlimakinadatabase:6tVhSHxwEcqh9dXa@cluster0.bu9tqw4.mongodb.net/?retryWrites=true&w=majority",
+      "mongodb+srv://vmlsoftwarecomp:VDgaHt0QJCwWzJX4@cluster0.lc5jirw.mongodb.net/?retryWrites=true&w=majority",
       connectionParams
     );
     console.log("Connected to MongoDB");
