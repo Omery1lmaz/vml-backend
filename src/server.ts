@@ -19,6 +19,7 @@ app.use(
       "http://localhost:3000",
       "http://localhost:3002",
       "http://localhost:5000",
+      "https://verdant-sherbet-67353d.netlify.app",
       "http://localhost:3004",
     ],
     credentials: true,

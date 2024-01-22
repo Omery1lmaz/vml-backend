@@ -77,6 +77,34 @@ export const getOfficers = async (
   }
 };
 
+export const deleteOfficer = async (
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
+  try {
+    const { id } = req.params;
+    console.log(id);
+    const officers = await Officer.findByIdAndDelete(id);
+    const allOfficers = await Officer.find();
+    res.status(200).send({
+      status_code: 200,
+      status: "OK",
+      item: allOfficers,
+    });
+  } catch (error) {
+    console.error(error);
+    next(
+      new SomeThingWentWrongError([
+        {
+          statusCode: 500,
+          reason: "Officer create failed, Please check informations",
+        },
+      ])
+    );
+  }
+};
+
 export const getScroressWithLimit = async (
   req: Request,
   res: Response,

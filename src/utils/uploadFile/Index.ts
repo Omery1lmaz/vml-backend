@@ -1,7 +1,7 @@
 import multer from "multer";
 const upload = multer({
   limits: {
-    fileSize: 1000000,
+    fileSize: 10000000000000000,
   },
   fileFilter(req: any, file: any, cb: any) {
     if (!file.originalname.match(/\.(jpg|jpeg|png)$/)) {
