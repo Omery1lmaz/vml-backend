@@ -14,7 +14,7 @@ export const createOfficer = async (
     console.log("akdsnlaksndlasldnasnlkdnas");
     const { officer } = req.body;
     const v = JSON.parse(officer);
-    // console.log(v, "v json");
+    console.log(v, "v json");
     if (req.file) {
       const processedFileName = req.file.originalname.replace(" ", "_");
       await sharp(req.file.buffer)
