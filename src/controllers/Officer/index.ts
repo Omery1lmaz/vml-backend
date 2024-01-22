@@ -51,3 +51,53 @@ export const createOfficer = async (
     );
   }
 };
+
+export const getOfficers = async (
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
+  try {
+    const officers = await Officer.find();
+    res.status(200).send({
+      status_code: 200,
+      status: "OK",
+      item: officers,
+    });
+  } catch (error) {
+    console.error(error);
+    next(
+      new SomeThingWentWrongError([
+        {
+          statusCode: 500,
+          reason: "Officer create failed, Please check informations",
+        },
+      ])
+    );
+  }
+};
+
+export const getScroressWithLimit = async (
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
+  try {
+    const scroess = await User.find().sort({ scoree: -1 });
+    res.status(200).send({
+      status_code: 200,
+      status: "OK",
+      item: scroess,
+    });
+  } catch (error) {
+    console.error(error);
+    next(
+      new SomeThingWentWrongError([
+        {
+          statusCode: 500,
+          reason: "Officer create failed, Please check informations",
+        },
+      ])
+    );
+  }
+};

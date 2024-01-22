@@ -69,13 +69,23 @@ export const updateScoreByUser = async (
   next: NextFunction
 ) => {
   try {
-    const { scoree } = req.body;
-    const { id } = req.params;
-    const response = await User.findByIdAndUpdate(id, { scoree });
+    const { id, scoree } = req.params;
+    const user = await User.findById(id);
+    // @ts-ignore
+    if (user?.scoree < scoree) {
+      const response = await User.findByIdAndUpdate(id, {
+        scoree: Number(scoree),
+      });
+      res.status(200).send({
+        status_code: 200,
+        status: "OK",
+        item: response,
+      });
+    }
     res.status(200).send({
       status_code: 200,
       status: "OK",
-      item: response,
+      item: user,
     });
   } catch (error) {
     console.error(error);

@@ -17,7 +17,9 @@ app.use(
     origin: [
       "http://localhost:3001",
       "http://localhost:3000",
+      "http://localhost:3002",
       "http://localhost:5000",
+      "http://localhost:3004",
     ],
     credentials: true,
   })
@@ -47,7 +49,7 @@ app.use("/api/officer", officerRoutes);
 // Son route hatası yönetimi
 app.use(errorHandler);
 
-const port = process.env.PORT || 30002;
+const port = process.env.PORT || 3003;
 
 app.listen(port, () => {
   return console.log(`Express is listening at http://localhost:${port} 
