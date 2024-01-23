@@ -20,6 +20,7 @@ app.use(
       "http://localhost:3002",
       "http://localhost:5000",
       "https://verdant-sherbet-67353d.netlify.app",
+      "https://test-sand-sigma.vercel.app",
       "http://localhost:3004",
     ],
     credentials: true,
