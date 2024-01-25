@@ -23,6 +23,8 @@ app.use(
       "https://test-sand-sigma.vercel.app",
       "https://test-git-main-omery1lmaz.vercel.app",
       "http://localhost:3004",
+      "https://deploy-preview-4--verdant-sherbet-67353d.netlify.app",
+      "*",
     ],
     credentials: true,
   })
