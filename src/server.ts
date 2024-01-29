@@ -24,7 +24,7 @@ app.use(
       "https://test-git-main-omery1lmaz.vercel.app",
       "http://localhost:3004",
       "https://deploy-preview-4--verdant-sherbet-67353d.netlify.app",
-      "https://vml-guess-who-vercel.vercel.app/",
+      "https://vml-guess-who-vercel.vercel.app",
       "*",
     ],
     credentials: true,
